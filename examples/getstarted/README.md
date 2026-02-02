@@ -1,42 +1,25 @@
-# getstarted
+# Strapi Local Setup – Get Started Example
 
-This is an example app you can run to test your changes quickly.
+## Objective
 
-## Requirements
+Set up Strapi locally from the official repository, run the admin panel,
+create a sample content type, and document the setup.
 
-- Docker
-- Docker compose
-- Node
+---
 
-## Installation
+## Steps Followed
 
-By default once you have setup the monorepo you will be able to run the getstarted app with a sqlite DB directly.
+### 1. Clone the Strapi Repository
 
-If you wish to run the getstarted app with another database you can use the `docker-compose.dev.yml` file at the root of the directory.
-
-### start the databases
-
-Run the following command at the root of the monorepo
-
+```bash
+git clone https://github.com/strapi/strapi.git
+2.  npm install -g yarn
+3.yarn install
+4. yarn build
+5.yarn develop ### strapi started succesfully
+6.created scrapi account username and pasword
+7.opened scrapi and published sample scrapi project
+8.git add .
+9. git commit -m "starpi successfuly pushed."
+10. git push
 ```
-docker-compose -f docker-compose.dev.yml up -d
-```
-
-If you need to stop the running databases you can stop them with the following command:
-
-```
-docker-compose -f docker-compose.dev.yml stop
-```
-
-### run the getstarted app with a specific database
-
-```
-DB={dbName} yarn develop
-```
-
-The way it works is that the `getstarted` app has a specific `database.js` config file that will use the `DB` environment variable to setup the right database connection. You can look at the code [here](./config/database.js)
-
-**Warning**
-
-You might have some errors while connecting to the databases.
-They might be coming from a conflict between a locally running database instance and the docker instance. To avoid the errors either shutdown your local database instance or change the ports in the `./config/database.js` and the `docker-compose.dev.yml` file.
